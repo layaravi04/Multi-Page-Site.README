@@ -28,7 +28,6 @@ export default function ProjectsPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-50 via-rose-50 to-purple-50 pt-20">
       <div className="container mx-auto px-4 py-16">
-        {/* Hero Section */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-pink-600 via-rose-500 to-purple-600 bg-clip-text text-transparent mb-6">
             My Projects
@@ -38,8 +37,6 @@ export default function ProjectsPage() {
             of projects that represent my journey of turning ideas into reality.
           </p>
         </div>
-
-        {/* Filter Tabs */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
           {["All", "IoT", "Infrastructure"].map((filter) => (
             <Button
@@ -56,7 +53,6 @@ export default function ProjectsPage() {
           ))}
         </div>
 
-        {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <Card
@@ -104,8 +100,6 @@ export default function ProjectsPage() {
             </Card>
           ))}
         </div>
-
-        {/* CTA Section */}
         <div className="text-center mt-16">
           <div className="bg-gradient-to-r from-pink-500 via-rose-500 to-purple-500 rounded-3xl p-8 md:p-12 text-white relative overflow-hidden">
             <div className="absolute inset-0 bg-white/10 backdrop-blur-sm"></div>
