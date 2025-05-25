@@ -67,8 +67,6 @@
     @apply bg-background text-foreground;
   }
 }
-
-/* Dark mode specific styles */
 .dark {
   background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
 }
@@ -96,8 +94,6 @@
 .dark .bg-white\/80 {
   background-color: hsl(var(--background) / 0.8) !important;
 }
-
-/* Custom animations */
 @keyframes float {
   0%,
   100% {
@@ -112,12 +108,10 @@
   animation: float 3s ease-in-out infinite;
 }
 
-/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
 
-/* Custom gradient text */
 .gradient-text {
   background: linear-gradient(135deg, #ec4899, #f43f5e, #a855f7);
   -webkit-background-clip: text;
