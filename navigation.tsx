@@ -1,5 +1,3 @@
-"use client"
-
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
@@ -64,7 +62,6 @@ export default function Navigation() {
             Cherry
           </Link>
 
-          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navigation.map((item) => (
               <Link
@@ -87,7 +84,6 @@ export default function Navigation() {
             </Button>
           </div>
 
-          {/* Mobile menu button */}
           <div className="md:hidden flex items-center gap-2">
             <Button
               variant="ghost"
@@ -108,7 +104,6 @@ export default function Navigation() {
           </div>
         </div>
 
-        {/* Mobile Navigation */}
         {isOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 bg-white dark:bg-gray-900 border-t border-pink-100 dark:border-gray-700">
