@@ -1,0 +1,206 @@
+"use client"
+
+import type React from "react"
+
+import { useState } from "react"
+import { Card, CardContent } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
+import { Label } from "@/components/ui/label"
+import { Mail, Phone, Send, CheckCircle } from "lucide-react"
+
+export default function ContactPage() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  })
+  const [isSubmitted, setIsSubmitted] = useState(false)
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    // Simulate form submission
+    setTimeout(() => {
+      setIsSubmitted(true)
+      setFormData({ name: "", email: "", subject: "", message: "" })
+    }, 1000)
+  }
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }))
+  }
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-rose-50 to-purple-50 pt-20">
+      <div className="container mx-auto px-4 py-16">
+        {/* Hero Section */}
+        <div className="text-center mb-16">
+          <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-pink-600 via-rose-500 to-purple-600 bg-clip-text text-transparent mb-6">
+            Get in Touch
+          </h1>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Ready to start your next project? We'd love to hear from you. Send us a message and we'll respond as soon as
+            possible.
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-12">
+          {/* Contact Form */}
+          <Card className="border-pink-100 shadow-xl">
+            <CardContent className="p-8">
+              {isSubmitted ? (
+                <div className="text-center py-8">
+                  <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
+                  <h3 className="text-2xl font-bold text-gray-800 mb-2">Message Sent!</h3>
+                  <p className="text-gray-600">Thank you for reaching out. We'll get back to you soon.</p>
+                  <Button
+                    onClick={() => setIsSubmitted(false)}
+                    className="mt-4 bg-gradient-to-r from-pink-500 to-rose-500 text-white border-0"
+                  >
+                    Send Another Message
+                  </Button>
+                </div>
+              ) : (
+                <>
+                  <h2 className="text-2xl font-bold text-gray-800 mb-6">Send us a Message</h2>
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div>
+                        <Label htmlFor="name" className="text-gray-700">
+                          Name
+                        </Label>
+                        <Input
+                          id="name"
+                          name="name"
+                          value={formData.name}
+                          onChange={handleChange}
+                          required
+                          className="mt-1 border-pink-200 focus:border-pink-400 focus:ring-pink-400"
+                          placeholder="Your full name"
+                        />
+                      </div>
+                      <div>
+                        <Label htmlFor="email" className="text-gray-700">
+                          Email
+                        </Label>
+                        <Input
+                          id="email"
+                          name="email"
+                          type="email"
+                          value={formData.email}
+                          onChange={handleChange}
+                          required
+                          className="mt-1 border-pink-200 focus:border-pink-400 focus:ring-pink-400"
+                          placeholder="your@email.com"
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <Label htmlFor="subject" className="text-gray-700">
+                        Subject
+                      </Label>
+                      <Input
+                        id="subject"
+                        name="subject"
+                        value={formData.subject}
+                        onChange={handleChange}
+                        required
+                        className="mt-1 border-pink-200 focus:border-pink-400 focus:ring-pink-400"
+                        placeholder="What's this about?"
+                      />
+                    </div>
+                    <div>
+                      <Label htmlFor="message" className="text-gray-700">
+                        Message
+                      </Label>
+                      <Textarea
+                        id="message"
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
+                        required
+                        rows={5}
+                        className="mt-1 border-pink-200 focus:border-pink-400 focus:ring-pink-400"
+                        placeholder="Tell us about your project..."
+                      />
+                    </div>
+                    <Button
+                      type="submit"
+                      className="w-full bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white border-0"
+                      size="lg"
+                    >
+                      Send Message <Send className="ml-2 w-4 h-4" />
+                    </Button>
+                  </form>
+                </>
+              )}
+            </CardContent>
+          </Card>
+
+          {/* Contact Information */}
+          <div className="space-y-8">
+            <Card className="border-pink-100 hover:shadow-xl transition-all duration-300">
+              <CardContent className="p-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-pink-500 to-rose-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Mail className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-800 mb-1">Email Us</h3>
+                    <p className="text-gray-600 mb-2">Send us an email anytime!</p>
+                    <a href="mailto:layalalith095@gmail.com" className="text-pink-600 hover:text-pink-700 font-medium">
+                      layalalith095@gmail.com
+                    </a>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-pink-100 hover:shadow-xl transition-all duration-300">
+              <CardContent className="p-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-rose-500 to-purple-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Phone className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-800 mb-1">Call Us</h3>
+                    <p className="text-gray-600 mb-2">Mon-Fri from 8am to 5pm</p>
+                    <a href="tel:+91 97400 29655" className="text-pink-600 hover:text-pink-700 font-medium">
+                      +91 97400 29655
+                    </a>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* FAQ Section */}
+            <Card className="border-pink-100">
+              <CardContent className="p-6">
+                <h3 className="text-lg font-semibold text-gray-800 mb-4">Quick Questions?</h3>
+                <div className="space-y-3 text-sm">
+                  <div>
+                    <p className="font-medium text-gray-700">What's your typical response time?</p>
+                    <p className="text-gray-600">We usually respond within 24 hours.</p>
+                  </div>
+                  <div>
+                    <p className="font-medium text-gray-700">Do you offer free consultations?</p>
+                    <p className="text-gray-600">Yes! Initial consultations are always free.</p>
+                  </div>
+                  <div>
+                    <p className="font-medium text-gray-700">What's your project timeline?</p>
+                    <p className="text-gray-600">Typically 2-8 weeks depending on complexity.</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
