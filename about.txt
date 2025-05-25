@@ -1,6 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { Users, Target, Award, Lightbulb } from "lucide-react"
-
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-50 via-rose-50 to-purple-50 pt-20">
@@ -37,7 +36,6 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* Personal Philosophy */}
         <div className="grid md:grid-cols-2 gap-8 mb-16">
           <Card className="border-pink-100 hover:shadow-xl transition-all duration-300">
             <CardContent className="p-8">
@@ -67,7 +65,6 @@ export default function AboutPage() {
           </Card>
         </div>
 
-        {/* My Qualities */}
         <div className="mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">What Drives Me</h2>
           <div className="grid md:grid-cols-4 gap-6">
@@ -106,7 +103,6 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* Personal Interests */}
         <div className="text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Beyond the Code</h2>
           <p className="text-gray-600 mb-12 max-w-2xl mx-auto">
