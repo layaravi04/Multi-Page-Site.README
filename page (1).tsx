@@ -6,7 +6,6 @@ import { ArrowRight, Sparkles, Zap, Heart } from "lucide-react"
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-50 via-rose-50 to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
-      {/* Hero Section */}
       <section className="relative overflow-hidden pt-20 pb-16">
         <div className="absolute inset-0 bg-gradient-to-r from-pink-400/20 via-rose-400/20 to-purple-400/20 blur-3xl"></div>
         <div className="container mx-auto px-4 relative z-10">
@@ -40,8 +39,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* Features Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -88,7 +85,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CTA Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="bg-gradient-to-r from-pink-500 via-rose-500 to-purple-500 rounded-3xl p-8 md:p-12 text-center text-white relative overflow-hidden">
